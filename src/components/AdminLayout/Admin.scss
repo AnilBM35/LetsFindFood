@@ -1,0 +1,205 @@
+@import "../../App.scss";
+
+// Admin Layout Variables
+$sidebar-width: 250px;
+$sidebar-collapsed-width: 70px;
+$header-height: 60px;
+$sidebar-bg: #2c3e50;
+$header-bg: #34495e;
+$active-link: #3498db;
+
+.admin-layout {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+  grid-template-columns: $sidebar-width 1fr;
+  grid-template-rows: $header-height 1fr;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  
+  &.sidebar-collapsed {
+    grid-template-columns: $sidebar-collapsed-width 1fr;
+    
+    .admin-sidebar {
+      width: $sidebar-collapsed-width;
+      
+      .sidebar-header h2 {
+        display: none;
+      }
+      
+      .sidebar-nav ul li {
+        a, button {
+          span {
+            display: none;
+          }
+          
+          svg {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.admin-header {
+  grid-area: header;
+  background-color: $header-bg;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 4px;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  
+  .header-right {
+    .user-info {
+      display: flex;
+      align-items: center;
+      
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.admin-sidebar {
+  grid-area: sidebar;
+  background-color: $sidebar-bg;
+  color: white;
+  width: $sidebar-width;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  z-index: 20;
+  
+  .sidebar-header {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+  
+  .sidebar-nav {
+    padding: 20px 0;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 5px;
+        
+        a, button {
+          display: flex;
+          align-items: center;
+          padding: 12px 20px;
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          width: 100%;
+          text-align: left;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          
+          svg {
+            margin-right: 10px;
+            font-size: 18px;
+          }
+          
+          &:hover, &.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+          }
+          
+          &.active {
+            border-left: 3px solid $active-link;
+          }
+        }
+        
+        &.logout-item {
+          margin-top: 30px;
+          
+          .logout-button {
+            color: #e74c3c;
+            
+            &:hover {
+              background-color: rgba(231, 76, 60, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.admin-content {
+  grid-area: content;
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .admin-layout {
+    grid-template-columns: 0 1fr;
+    
+    &.sidebar-collapsed {
+      grid-template-columns: 0 1fr;
+    }
+    
+    .admin-sidebar {
+      position: fixed;
+      left: -$sidebar-width;
+      height: 100%;
+      transition: left 0.3s ease;
+    }
+    
+    &:not(.sidebar-collapsed) .admin-sidebar {
+      left: 0;
+    }
+  }
+}

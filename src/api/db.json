@@ -1,0 +1,154 @@
+{
+  "users": [
+    {
+      "id": "dfcaee05-fc85-406e-a7ba-3b55e5f6cb32",
+      "name": "Bestu bhai",
+      "age": "70",
+      "email": "bestu@gmail.com",
+      "role": "user",
+      "password": "anil"
+    },
+    {
+      "id": "f0a13bbe-e01a-4fc3-9185-109c2fae871b",
+      "name": "saj bana malai",
+      "age": 29,
+      "email": "saj@gmail.com",
+      "password": "anil"
+    },
+    {
+      "id": "3b946eb5-efc6-4cfd-ae17-92d7455def08",
+      "name": "dhaney dai",
+      "age": 29,
+      "email": "dhan@gmail.com",
+      "password": "anil"
+    },
+    {
+      "id": "493b7fac-f47d-4711-91c8-95782efa4ef5",
+      "name": "Bestu bhai",
+      "age": 29,
+      "email": "bestu@gmail.com",
+      "role": "user",
+      "password": "anil"
+    },
+    {
+      "id": "300a",
+      "name": "shrijan bhai",
+      "age": "40",
+      "email": "siru@gmail.com",
+      "role": "user",
+      "password": "anil"
+    },
+    {
+      "id": "17e2",
+      "name": "new",
+      "email": "new@gmail.com",
+      "password": "iamnew",
+      "age": "18",
+      "role": "admin"
+    },
+    {
+      "id": "7fb1",
+      "name": "yooo",
+      "email": "yoo@gmail.com",
+      "password": "iamyoo",
+      "age": "22",
+      "role": "user"
+    }
+  ],
+  "comments": [
+    {
+      "mealId": "52944",
+      "id": "1722345678901abc",
+      "author": "Bestu bhai",
+      "content": "Great recipe!",
+      "createdAt": "2025-03-29T17:45:00.000Z",
+      "likes": 1,
+      "likedBy": [
+        "Bestu bhai"
+      ],
+      "parentId": null
+    },
+    {
+      "mealId": "52944",
+      "id": "1722345678902xyz",
+      "author": "new",
+      "content": "hello",
+      "createdAt": "2025-03-30T07:03:34.000Z",
+      "likes": 1,
+      "likedBy": [
+        "yooo"
+      ],
+      "parentId": null
+    },
+    {
+      "mealId": "52944",
+      "id": "1722345678903def",
+      "author": "new",
+      "content": "Thanks for sharing!",
+      "createdAt": "2025-03-30T07:05:00.000Z",
+      "likes": 0,
+      "likedBy": [],
+      "parentId": "1722345678901abc"
+    },
+    {
+      "id": "1743298132956tn3itkkp8",
+      "mealId": "52944",
+      "author": "yooo",
+      "content": "okkk",
+      "createdAt": "2025-03-30T01:28:52.956Z",
+      "parentId": "1722345678902xyz"
+    },
+    {
+      "id": "17432990256687vq7q308v",
+      "mealId": "52976",
+      "author": "yooo",
+      "content": "heeloo",
+      "createdAt": "2025-03-30T01:43:45.668Z",
+      "likes": 0,
+      "likedBy": [],
+      "parentId": null
+    },
+    {
+      "id": "1743319482489cdf73ajqa",
+      "mealId": "52885",
+      "author": "new",
+      "content": "gekki",
+      "createdAt": "2025-03-30T07:24:42.489Z",
+      "likes": 1,
+      "likedBy": [
+        "new"
+      ],
+      "parentId": null
+    },
+    {
+      "id": "1743319493606u6ub7uczw",
+      "mealId": "52885",
+      "author": "new",
+      "content": "huehei\n",
+      "createdAt": "2025-03-30T07:24:53.606Z",
+      "parentId": "1743319482489cdf73ajqa",
+      "likes": 0,
+      "likedBy": []
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "userId": "300a",
+      "mealId": "52944",
+      "createdAt": "2025-03-30T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "userId": "7fb1",
+      "mealId": "52976",
+      "createdAt": "2025-03-30T12:05:00Z"
+    },
+    {
+      "id": "592a",
+      "userId": "17e2",
+      "mealId": "52885",
+      "createdAt": "2025-03-30T07:24:34.164Z"
+    }
+  ]
+}

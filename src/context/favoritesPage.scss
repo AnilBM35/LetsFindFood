@@ -1,0 +1,123 @@
+@import "../App.scss";
+
+    .favorites-page {
+      padding: 2rem 0;
+
+      .sc-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: $clr-black;
+        margin-bottom: 2rem;
+        text-align: center;
+        text-transform: capitalize;
+        position: relative;
+        padding-bottom: 1rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 3px;
+          background-color: $clr-orange;
+        }
+      }
+
+      .no-favorites {
+        text-align: center;
+        padding: 4rem 0;
+        background-color: rgba($clr-orange, 0.05);
+        border-radius: 8px;
+        margin: 2rem 0;
+
+        p {
+          font-size: 1.6rem;
+          color: $clr-black;
+          margin-bottom: 2rem;
+          opacity: 0.8;
+        }
+
+        .browse-link {
+          display: inline-block;
+          padding: 1rem 2.5rem;
+          background-color: $clr-orange;
+          color: $clr-white;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: $transition;
+
+          &:hover {
+            background-color: darken($clr-orange, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba($clr-orange, 0.2);
+          }
+        }
+      }
+
+      // Reusing meal and category grid styles for favorites
+      .favorites-grid {
+        display: grid;
+        gap: 1.6rem;
+        grid-template-columns: repeat(1, 1fr);
+
+        @media screen and (min-width: 420px) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.4rem;
+        }
+        @media screen and (min-width: 576px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @media screen and (min-width: 992px) {
+          grid-template-columns: repeat(5, 1fr);
+        }
+
+        .favorite-item {
+          background: $clr-white;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transition: $transition;
+          position: relative;
+
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+          }
+
+          &-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+          }
+
+          &-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+          }
+
+          &-content {
+            padding: 1.5rem;
+
+            &-title {
+              font-size: 1.6rem;
+              font-weight: 700;
+              margin-bottom: 0.5rem;
+              color: $clr-black;
+            }
+
+            &-category {
+              font-size: 1.2rem;
+              color: $clr-orange;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }

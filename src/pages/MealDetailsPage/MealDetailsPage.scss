@@ -1,0 +1,44 @@
+@import "../../App.scss";
+.meal-details-container {
+    position: relative;
+    
+    .meal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 0 2rem;
+  
+      h2 {
+        font-size: 2.4rem;
+        color: #333;
+        margin: 0;
+      }
+    }
+  
+    .meal-fav-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ff8c42;
+      border-radius: 20px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background: #ff8c42;
+        color: white;
+        border-color: #ff8c42;
+  
+        .anticon {
+          color: white;
+        }
+      }
+  
+      .anticon {
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
